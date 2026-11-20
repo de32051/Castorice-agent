@@ -1,0 +1,45 @@
+{
+  "name": "dsh-xiadie-agent",
+  "version": "1.0.0",
+  "description": "《崩坏：星穹铁道》遐蝶的 DeepSeek Harness 预设组合包：遐蝶-聊天（沉浸角色扮演 + 84 万字剧情库本地检索）与遐蝶-工作（完整编码工具面）",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/de32051/Castorice-agent.git"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-bundle",
+    "dsh-preset",
+    "agent-preset",
+    "honkai-star-rail",
+    "castorice",
+    "roleplay"
+  ],
+  "exports": {
+    ".": "./lib/lore.js",
+    "./lore": "./lib/lore.js",
+    "./guard": "./lib/guard.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "presets",
+    "scripts",
+    "data/lore_full.md",
+    "cordis.patch.yml",
+    "README.md",
+    "NOTICE.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/validate.mjs",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
